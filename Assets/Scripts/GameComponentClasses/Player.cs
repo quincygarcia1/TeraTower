@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Class that handles the logic for the player actions and movement computations   
-    public Camera perspectiveCamera { get; private set; }
+    // Class that handles the logic for the player actions and movement computations  
     public static Player Instance { get; private set; }
+    public Camera perspectiveCamera { get; private set; }
     private Ray _ray;
     private RaycastHit _hit;
-    private int _selectionLayerMask = 1 << LayerConstants.PlatformLayer;
+    private int _selectionLayerMask = 1 << LayerConstants.UILayer3D;
     private float _yDir;
     private float _prevMagnitude = 0;
     public event EventHandler<SelectionArgs> ComponentSelected;
@@ -18,19 +18,23 @@ public class Player : MonoBehaviour
     private float _cameraSpeed = 15f;
 
     private float _scrollCap = 300f;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         if (Instance != null)
         {
             Debug.LogError("More than one player");
             throw new Exception("More than one player");
         }
-
+    
         Instance = this;
         perspectiveCamera = Camera.main;
+    }
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     void Update()
