@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TotalGarden : MonoBehaviour
 {
-    public TotalGarden Instance { get; private set; }
+    public static TotalGarden Instance { get; private set; }
 
     void Awake()
     {
