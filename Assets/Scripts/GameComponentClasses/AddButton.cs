@@ -10,8 +10,7 @@ public class AddButton : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 20f;
 
     [SerializeField] private Transform _newPlatform;
-
-    [SerializeField] private Transform _spawnPoint;
+    
     // Start is called before the first frame update
     void Start()
     {
