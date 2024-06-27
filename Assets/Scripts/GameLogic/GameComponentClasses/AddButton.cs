@@ -28,13 +28,17 @@ public class AddButton : MonoBehaviour
 
     private void Player_OnComponentSelect(object sender, SelectionArgs e)
     {
-        Debug.Log(e.transform == transform);
         if (e.transform == transform)
         {
-            var newInstance = Instantiate(_newPlatform, TotalGarden.Instance.transform);
-            newInstance.transform.position += new Vector3(0f, transform.position.y - 1, 0f);
+            /*
+                TODO: When UI menu is created for selected the platform types change this from hard-coded to the
+                selection in the UI menu 
+            */
+            
+            float createdY = TotalGarden.Instance.CreateNewPlatform(PlatformType.Standard, DirtType.Standard);
+            
             transform.position += 
-                new Vector3(0f, newInstance.GetComponentsInChildren<BoxCollider>()[0].bounds.size.y * 2, 0f);
+                new Vector3(0f, createdY * 2, 0f);
         }
     }
 }
