@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant: MonoBehaviour
+public class Plant
 {
     // TODO: Determine range
     public int ThirstLevel { get; private set; }

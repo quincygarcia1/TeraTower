@@ -19,10 +19,15 @@ public class TotalGarden : MonoBehaviour
             Instantiate(PlatformFactory.Instance.GeneratePlatform(
                     platformType, dirtType).transform,
                 transform);
-        PlantPlatform top = this.GetTop();
+        GameObject top = GameObject.FindWithTag("TopPlatform");
         newInstance.transform.position += new Vector3(0f, 
-            (top.transform.position.y != 0) ? top.transform.position.y + 
+            (top != null) ? top.transform.position.y + 
                             (top.GetComponentsInChildren<BoxCollider>()[0].bounds.size.y) * 2 : 1, 0);
+        if (top != null)
+        {
+            top.tag = "Untagged";
+        }
+        newInstance.tag = "TopPlatform";
         return newInstance.GetComponentsInChildren<BoxCollider>()[0].bounds.size.y;
     }
 
