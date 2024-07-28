@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/PlatformSelectorStyles.uss?fileID=7433441132597879392&amp;guid=69f8601ca6d9c4858b8319dd37af28b8&amp;type=3#PlatformSelectorStyles" />
+    <ui:VisualElement name="Container" class="background" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(9, 106, 0); align-items: center; justify-content: flex-start; flex-grow: 1; width: 400px; height: 300px; max-height: 300px; position: absolute;">
+        <ui:Label tabindex="-1" text="Create New Platform" parse-escape-sequences="true" display-tooltip-when-elided="true" class="title-label" />
+        <ui:ScrollView name="BtnList" style="min-width: 100%; max-width: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>

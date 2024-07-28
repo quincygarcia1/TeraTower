@@ -8,8 +8,6 @@ public class AddButton : MonoBehaviour
     private Vector3 _rotateDir;
     private Quaternion _rotateAngle;
     [SerializeField] private float _rotationSpeed = 20f;
-
-    [SerializeField] private Transform _newPlatform;
     
     // Start is called before the first frame update
     void Start()
@@ -34,8 +32,8 @@ public class AddButton : MonoBehaviour
                 TODO: When UI menu is created for selected the platform types change this from hard-coded to the
                 selection in the UI menu 
             */
-            
-            float createdY = TotalGarden.Instance.CreateNewPlatform(PlatformType.Standard, DirtType.Standard);
+
+            float createdY = 1f;
             
             transform.position += 
                 new Vector3(0f, createdY * 2, 0f);

@@ -1,0 +1,10 @@
+.title-label {
+    top: 0;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(217, 217, 217, 0);
+    color: rgb(226, 214, 214);
+    font-size: 30px;
+    -unity-font-style: bold;
+}
