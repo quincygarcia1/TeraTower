@@ -13,6 +13,7 @@ public class AddButton : MonoBehaviour
     void Start()
     {
         Player.Instance.ComponentSelected += Player_OnComponentSelect;
+        Actions.ComponentYChange += ChangePos;
     }
 
     void Update()
@@ -32,11 +33,18 @@ public class AddButton : MonoBehaviour
                 TODO: When UI menu is created for selected the platform types change this from hard-coded to the
                 selection in the UI menu 
             */
+            Actions.OpenUI(true);
 
-            float createdY = 1f;
-            
-            transform.position += 
-                new Vector3(0f, createdY * 2, 0f);
         }
+        else
+        {
+            Actions.OpenUI(false);
+        }
+    }
+
+    private void ChangePos(float createdY)
+    {
+        transform.position += 
+            new Vector3(0f, createdY * 2, 0f);
     }
 }
